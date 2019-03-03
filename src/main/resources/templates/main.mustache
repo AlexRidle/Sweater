@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html>
 <body>
     <div>
         <form action="/logout" method="post">
@@ -17,7 +18,7 @@
     <div>Список сообщений</div>
     <form method="post" action="filter">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-        <input type="text" name="filter">
+        <input type="text" name="filter" placeholder="Тэг для поиска">
         <button type="submit">Найти</button>
     </form>
     {{#messages}}
@@ -25,6 +26,7 @@
         <b>{{id}}</b>
         <span>{{text}}</span>
         <i>{{tag}}</i>
+        <strong>{{authorName}}</strong>
     </div>
     {{/messages}}
 </body>
